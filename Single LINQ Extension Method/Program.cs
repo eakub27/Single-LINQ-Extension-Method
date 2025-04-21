@@ -35,4 +35,4 @@ foreach (var item in doubleData)
 foreach (var item in stringData)
 {
     Console.Write(" " + item);
-}
+} //
