@@ -30,4 +30,18 @@ foreach (var x in sqNo3)
     Console.WriteLine(x);
 }
 
+//4. Write a program in C# Sharp to display the number and frequency of a given number from an array.
 
+int[] frequencyArr = new int[] { 5, 9, 1, 2, 3, 7, 5, 6, 7, 3, 7, 6, 8, 5, 4, 9, 6, 2 };
+
+var frequency = frequencyArr.GroupBy(x => x)
+    .Select(g => new { Number = g.Key, Frequency = g.Count() })
+    .OrderBy(x => x.Number);
+
+
+
+
+foreach (var x in frequency)
+{
+    Console.WriteLine($"Number: {x.Number}, Frequency: {x.Frequency}");
+};
