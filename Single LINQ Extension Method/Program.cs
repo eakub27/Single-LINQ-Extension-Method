@@ -38,10 +38,20 @@ var frequency = frequencyArr.GroupBy(x => x)
     .Select(g => new { Number = g.Key, Frequency = g.Count() })
     .OrderBy(x => x.Number);
 
-
-
-
 foreach (var x in frequency)
 {
     Console.WriteLine($"Number: {x.Number}, Frequency: {x.Frequency}");
 };
+
+//5. Write a program in C# Sharp to display the characters and frequency of each character in a given string
+
+string str = "Assalamu Alaikum";
+
+var frequencyCount = str.GroupBy(c => char.ToLower(c))
+    .Select(g => new {ch = g.Key, count = g.Count() })
+    .OrderBy(x => x.ch);
+foreach (var x in frequencyCount)
+{
+    Console.WriteLine($"Character: {x.ch}, Frequency: {x.count}");
+};
+
