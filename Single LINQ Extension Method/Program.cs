@@ -1,5 +1,7 @@
 ﻿// See https://aka.ms/new-console-template for more information
 
+using static System.Runtime.InteropServices.JavaScript.JSType;
+
 int[] numbers = { 5, 4, 1, 3, 9, 8, 6, 7, 2, 0 };
 
 var lowNums = numbers.Where(num => num < 5);
@@ -32,7 +34,7 @@ foreach (var x in sqNo3)
 
 //4. Write a program in C# Sharp to display the number and frequency of a given number from an array.
 
-int[] frequencyArr = new int[] { 5, 9, 1, 2, 3, 7, 5, 6, 7, 3, 7, 6, 8, 5, 4, 9, 6, 2 };
+int[] frequencyArr = { 5, 9, 1, 2, 3, 7, 5, 6, 7, 3, 7, 6, 8, 5, 4, 9, 6, 2 };
 
 var frequency = frequencyArr.GroupBy(x => x)
     .Select(g => new { Number = g.Key, Frequency = g.Count() })
@@ -53,5 +55,21 @@ var frequencyCount = str.GroupBy(c => char.ToLower(c))
 foreach (var x in frequencyCount)
 {
     Console.WriteLine($"Character: {x.ch}, Frequency: {x.count}");
-};
+}
+
+//7.display numbers, multiplication of numbers with frequency and the frequency of a number in an array.
+int[] arr = { 5, 5, 2, 5, 2,3,5,3,3};
+
+var multiply = arr.GroupBy(x => x)
+    .Select(g => new { Number = g.Key, Result = g.Key * g.Count(), Frequency = g.Count() })
+    .OrderBy(x => x.Number);
+  
+    
+
+foreach (var x in multiply)
+{
+    Console.WriteLine($"Number: {x.Number}, Result: {x.Result} , Frequency: {x.Frequency}");
+}
+
+
 
