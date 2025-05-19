@@ -71,5 +71,5 @@ foreach (var x in multiply)
     Console.WriteLine($"Number: {x.Number}, Result: {x.Result} , Frequency: {x.Frequency}");
 }
 
-
+//
 
