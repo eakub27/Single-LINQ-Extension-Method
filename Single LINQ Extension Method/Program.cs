@@ -56,7 +56,7 @@ foreach (var x in frequencyCount)
 {
     Console.WriteLine($"Character: {x.ch}, Frequency: {x.count}");
 }
-
+Console.WriteLine("**** 7.display numbers, multiplication of numbers with frequency and the frequency of a number in an array ***");
 //7.display numbers, multiplication of numbers with frequency and the frequency of a number in an array.
 int[] arr = { 5, 5, 2, 5, 2,3,5,3,3};
 
@@ -71,5 +71,20 @@ foreach (var x in multiply)
     Console.WriteLine($"Number: {x.Number}, Result: {x.Result} , Frequency: {x.Frequency}");
 }
 
-//
+//8. Write a program in C# Sharp to find a string that starts and ends with a specific character
+Console.WriteLine("=========== Problem No.8 =============");
+
+string[] city = { "ArambagM", "CALIFORNIA", "ZURICH", "NEW DELHI", "AMSTERDAM", "ABU DHABI", "PARIS" };
+
+
+var AM = city.Where(x => x.StartsWith("A"))
+            .Where(x => x.EndsWith("M"))
+            .Select( Name => new { Name, Length = Name.Length }).ToList(); // simply use ToList() 
+
+foreach (var x in AM)
+{
+    Console.WriteLine(x);
+}
+
+
 
