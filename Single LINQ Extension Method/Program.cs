@@ -86,5 +86,17 @@ foreach (var x in taregetCityName)
     Console.WriteLine(x);
 }
 
+Console.WriteLine("=========== Problem No.9 =============");
+//9. Write a program in C# Sharp to find the number of elements in an array that are greater than 80 and display them in ascending order.
 
+int[] conNumber = { 1,2,3,4, 55, 200, 740, 76, 230, 482, 95 };
+var conditionalNumber = conNumber.Where(x =>x>80)
+    .OrderBy(x => x)
+    .ToList();
 
+foreach (var x in conditionalNumber)
+{
+    Console.Write(" "+x );
+}
+Console.WriteLine();
+Console.WriteLine("=========== Problem No.10 =============");
