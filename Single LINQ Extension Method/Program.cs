@@ -77,11 +77,11 @@ Console.WriteLine("=========== Problem No.8 =============");
 string[] city = { "ArambagM", "CALIFORNIA", "ZURICH", "NEW DELHI", "AMSTERDAM", "ABU DHABI", "PARIS" };
 
 
-var AM = city.Where(x => x.StartsWith("A"))
+var taregetCityName = city.Where(x => x.StartsWith("A"))
             .Where(x => x.EndsWith("M"))
             .Select( Name => new { Name, Length = Name.Length }).ToList(); // simply use ToList() 
 
-foreach (var x in AM)
+foreach (var x in taregetCityName)
 {
     Console.WriteLine(x);
 }
