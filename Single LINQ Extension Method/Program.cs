@@ -99,4 +99,14 @@ foreach (var x in conditionalNumber)
     Console.Write(" "+x );
 }
 Console.WriteLine();
-Console.WriteLine("=========== Problem No.10 =============");
+Console.WriteLine("=========== Problem No.11 =============");
+//11. Write a program in C# Sharp to find the top three numbers from an array.
+
+var topThree = conNumber.OrderByDescending(x => x)
+    .Take(3);
+
+
+foreach (var x in topThree)
+{
+    Console.Write(" " + x);
+}
