@@ -110,3 +110,13 @@ foreach (var x in topThree)
 {
     Console.Write(" " + x);
 }
+Console.WriteLine();
+
+//string line = " this IS a STRING";
+//var words = line.Split(' ')
+//    .Select(upWord => upWord.Any( i => char.IsLower(i)? new {x =upWord}: new ))
+
+string st = "Eakub";
+var y = st.Any(i => char.IsLower(i));
+
+Console.WriteLine(y);
