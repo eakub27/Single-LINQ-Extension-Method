@@ -112,11 +112,25 @@ foreach (var x in topThree)
 }
 Console.WriteLine();
 
-//string line = " this IS a STRING";
-//var words = line.Split(' ')
-//    .Select(upWord => upWord.Any( i => char.IsLower(i)? new {x =upWord}: new ))
 
 string st = "Eakub";
-var y = st.Any(i => char.IsLower(i));
+var y = st.Any(i => char.IsLower(i)) ? st.ToLower()
+    : st.ToUpper();
 
 Console.WriteLine(y);
+
+Console.WriteLine("=========== Problem No.12 =============");
+//12. C# Sharp to find uppercase words in a string.
+
+string line = " this IS a STRING";
+var words = line.Split(' ')
+    .Select(upWord => upWord.Any(i => char.IsLower(i)) ? "" : upWord)
+    .Where(x => x!= "")  //Where(x => !string.IsNullOrEmpty(x))  -- or use it
+    .ToList();
+
+
+
+foreach (var x in words)
+{
+    Console.WriteLine(x);
+}
