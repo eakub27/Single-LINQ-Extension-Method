@@ -135,13 +135,31 @@ foreach (var x in words)
     Console.WriteLine(x);
 }
 
+Console.WriteLine("============= Problem No.14 ===============");
+//14.C# Sharp to find the n-th maximum grade point achieved by the students
+
 List<Student> students = new List<Student>
 {
     new Student { Id = 1, Name = "Eakub", Address = "Dhaka", CGPA = 3.5 },
     new Student { Id = 2, Name = "Rafiq", Address = "Chittagong", CGPA = 3.8 },
     new Student { Id = 3, Name = "Sadia", Address = "Sylhet", CGPA = 3.9 },
-    new Student { Id = 4, Name = "Rahim", Address = "Rajshahi", CGPA = 3.6 }
+    new Student { Id = 4, Name = "Rahim", Address = "Rajshahi", CGPA = 3.6 },
+    new Student { Id = 5, Name = "Karim", Address = "Khulna", CGPA = 3.7 },
+    new Student { Id = 6, Name = "Sakib", Address = "Barisal", CGPA = 3.4 },
+    new Student { Id = 7, Name = "Rafi", Address = "Comilla", CGPA = 3.2 },
+
 };
+
+var sta = students.Where(x => x.CGPA >= 3.5)
+    .Select(chatro => new {chatro.Id,chatro.Name,chatro.Address,chatro.CGPA});
+foreach (var x in sta)
+{
+    Console.WriteLine(x);
+}
+
+
+
+
 
 
 
