@@ -1,5 +1,7 @@
 ﻿// See https://aka.ms/new-console-template for more information
 
+using Single_LINQ_Extension_Method;
+using System.ComponentModel.DataAnnotations;
 using static System.Runtime.InteropServices.JavaScript.JSType;
 
 int[] numbers = { 5, 4, 1, 3, 9, 8, 6, 7, 2, 0 };
@@ -128,9 +130,20 @@ var words = line.Split(' ')
     .Where(x => x!= "")  //Where(x => !string.IsNullOrEmpty(x))  -- or use it
     .ToList();
 
-
-
 foreach (var x in words)
 {
     Console.WriteLine(x);
 }
+
+List<Student> students = new List<Student>
+{
+    new Student { Id = 1, Name = "Eakub", Address = "Dhaka", CGPA = 3.5 },
+    new Student { Id = 2, Name = "Rafiq", Address = "Chittagong", CGPA = 3.8 },
+    new Student { Id = 3, Name = "Sadia", Address = "Sylhet", CGPA = 3.9 },
+    new Student { Id = 4, Name = "Rahim", Address = "Rajshahi", CGPA = 3.6 }
+};
+
+
+
+
+
