@@ -171,4 +171,19 @@ foreach (var x in ff)
     Console.WriteLine($"File Extension: {x.Extention}, Count: {x.Count}");
 }
 
+Console.WriteLine("=========== Problem No.16 =============");
 
+//16. show file size and dile name
+string[] dirFile = Directory.GetFiles(@"E:\Backgroud Pic");
+var fileSize = dirFile.Select(file => new {name = Path.GetFileName(file), size =new FileInfo(file).Length });
+
+var fileSizeKB = dirFile.Select(file => new
+{
+    FileName = Path.GetFileName(file),
+    SizeKB =Math.Round( new FileInfo(file).Length / 1024.0) // Convert bytes to kilobytes
+});
+
+foreach (var x in fileSizeKB)
+{
+    Console.WriteLine(x);
+}
