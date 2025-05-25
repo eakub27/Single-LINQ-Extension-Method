@@ -158,10 +158,17 @@ foreach (var x in sta)
 }
 
 
+Console.WriteLine("=========== Problem No.15 =============");
+//15. C# Sharp to count file extensions and group it using LINQ.
 
+string[] filearr1 = { "aaa.frx", "bbb.TXT", "xyz.dbf", "abc.pdf", "aaaa.PDF", "xyz.frt", "abc.xml", "ccc.txt", "zzz.txt" };
 
-
-
-
+var ff = filearr1.GroupBy(x => x.Split('.').Last().ToLower())
+    .Select(g => new { Extention = g.Key, Count = g.Count() })
+    .OrderBy(x => x.Count);
+foreach (var x in ff)
+{
+    Console.WriteLine($"File Extension: {x.Extention}, Count: {x.Count}");
+}
 
 
