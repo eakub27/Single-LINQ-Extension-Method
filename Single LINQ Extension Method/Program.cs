@@ -201,6 +201,7 @@ listOfString.Add("u");
 listOfString.Add("v");
 listOfString.Add("w");
 
+listOfString.RemoveRange(6, 3); // This will remove 3 items starting from index 1
 
 var ss = listOfString.Select(x => x.Length > 1 ? x.Remove(1, 1) : x)
     .Where((x, index) => index != 3)
