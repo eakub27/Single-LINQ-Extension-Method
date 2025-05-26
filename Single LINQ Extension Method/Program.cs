@@ -4,6 +4,10 @@ using Single_LINQ_Extension_Method;
 using System.ComponentModel.DataAnnotations;
 using static System.Runtime.InteropServices.JavaScript.JSType;
 
+
+
+
+
 int[] numbers = { 5, 4, 1, 3, 9, 8, 6, 7, 2, 0 };
 
 var lowNums = numbers.Where(num => num < 5);
@@ -212,3 +216,12 @@ foreach (var x in ss)
 {
     Console.WriteLine(x);
 }
+
+
+Console.WriteLine("=========== Problem No.18 =============");
+List<int>? Skill = [1, 2, 3, 4, 5, 6];
+var s1 = Skill.Any() ? "Eakub" : "Rafiq";
+var s2 = Skill.Count() > 0 ? "Eakub" : "Rafiq";
+var s3 = Skill is null ? "Eakub" : "Rafiq";
+
+Console.WriteLine(s1 + s2 + s3);
