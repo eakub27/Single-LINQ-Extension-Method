@@ -187,3 +187,27 @@ foreach (var x in fileSizeKB)
 {
     Console.WriteLine(x);
 }
+
+Console.WriteLine("=========== Problem No.17 =============");
+// C# Sharp to remove items from list without using remove function
+//C# Sharp to remove a range of items from a list by passing the start index and number of elements to remove.
+//List<string> listOfString = new List<string>();
+// Add strings to the list
+List<string> listOfString = ["man", "name", "opp", "p", "q"];
+listOfString.Add("r");
+listOfString.Add("s");
+listOfString.Add("t");
+listOfString.Add("u");
+listOfString.Add("v");
+listOfString.Add("w");
+
+
+var ss = listOfString.Select(x => x.Length > 1 ? x.Remove(1, 1) : x)
+    .Where((x, index) => index != 3)
+    .ToList();
+
+  // This will remove 3 items starting from index 1
+foreach (var x in ss)
+{
+    Console.WriteLine(x);
+}
