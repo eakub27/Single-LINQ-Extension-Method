@@ -250,5 +250,20 @@ List<Purchase> purchlist = new List<Purchase>
             new Purchase { InvNo=106, ItemId = 1,  PurQty = 458 }
         };
 
+var result = itemlist.Join(purchlist,
+    item => item.ItemId, // Key selector for Item_mast
+    purchase => purchase.ItemId, // Key selector for Purchase
+    (item, purchase) => new // Result selector
+    {
+        item.ItemId,
+        item.ItemDes,
+        purchase.InvNo,
+        purchase.PurQty
+    })
+    .OrderBy(x => x.ItemId); // Order by ItemId
+
+foreach (var x in result)
+{
+    Console.WriteLine($"ItemId: {x.ItemId}, ItemDes: {x.ItemDes}, InvNo: {x.InvNo}, PurQty: {x.PurQty}");
 
 }
